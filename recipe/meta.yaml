@@ -1,5 +1,5 @@
 {% set name = "maestrowf" %}
-{% set version = "1.1.10" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/LLNL/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: ea7ae54bdeeb4639fd7cd1e211b71dafac20d26005def54de7f175945d747003
+  sha256: 0d85293500fcc0486aa34f5c969c55cf0da53f79f5a4bb48004d612959b04bed
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
