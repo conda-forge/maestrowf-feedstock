@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - maestro = maestrowf.maestrowf:main
@@ -19,11 +19,11 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - poetry
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - coloredlogs
     - dill
     - filelock
@@ -40,6 +40,7 @@ test:
     - maestrowf
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
